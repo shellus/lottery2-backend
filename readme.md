@@ -19,11 +19,8 @@ php artisan db:seed
 
 ```
 
-## 文档
-
-暂无
-
 ## 命名约定
+
 - 数据模型名称
     - Lottery      彩票
     - Period       期数
@@ -34,6 +31,9 @@ php artisan db:seed
     - Lottery ->  name         彩票代码
     - Period ->   period_no     期号
 
+## 文档
+
+暂无
 
 ## 开源协议
 
