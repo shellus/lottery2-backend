@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\OpenTime whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\OpenTime whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read mixed $period_number
  */
 class OpenTime extends Model
 {
