@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class OpenResult extends Migration
+class CreateOpenResultTable extends Migration
 {
     /**
      * Run the migrations.

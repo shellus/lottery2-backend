@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
  * 彩票开奖时间表表
  * Class Lotterys
  */
-class OpenTime extends Migration {
+class CreateOpenTimeTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -20,6 +20,7 @@ class OpenTime extends Migration {
         Schema::create('open_times', function(Blueprint $table)
         {
             $table->increments('id');
+            $table->integer('period_number')->unsigned();
             $table->integer('lottery_id')->unsigned();
             $table->time('open_time', 32);
             $table->timestamps();

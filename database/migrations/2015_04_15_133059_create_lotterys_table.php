@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
  * 彩票种类表结构
  * Class Lotterys
  */
-class Lotterys extends Migration {
+class CreateLotterysTable extends Migration {
 
 	/**
 	 * Run the migrations.
