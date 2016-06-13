@@ -1,5 +1,5 @@
 <?php
-
+use \Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function (\Illuminate\Http\Request $request) {
+Route::get('/', function (Request $request) {
     $result = \App\Lottery::whereName($request['name']) -> firstOrFail() ->getNextPeriod();
     return $result;
 });
-Route::get('/test', function (\Illuminate\Http\Request $request) {
+Route::get('/test', function (Request $request) {
 
     $attrs = ['name' =>'a' . \App\User::count(),'email' => 'a' . \App\User::count()];
 
