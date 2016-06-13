@@ -25,6 +25,7 @@ php artisan db:seed
     - Lottery      彩票
     - Period       期数
     - OpenTime     开奖时间
+    - OpenResult   开奖结果
     - User         网站会员
 
 - 字段含义（部分）
