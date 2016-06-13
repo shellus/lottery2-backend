@@ -10,17 +10,11 @@ use \Illuminate\Http\Request;
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', function (Request $request) {
-    $result = \App\Lottery::whereName($request['name']) -> firstOrFail() ->getNextPeriod();
-    return $result;
+    return view('index');
 });
-Route::get('/test', function (Request $request) {
 
-    $attrs = ['name' =>'a' . \App\User::count(),'email' => 'a' . \App\User::count()];
 
-    $user = new \App\User($attrs);
-    $user -> save();
-
-    return $user;
+Route::group(['prefix' => '/lottery'], function(){
+    Route::get('/next-period', 'Lottery\LotteryController@getNextPeriod');
 });
