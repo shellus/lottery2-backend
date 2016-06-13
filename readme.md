@@ -23,6 +23,18 @@ php artisan db:seed
 
 暂无
 
-## License
+## 命名约定
+- 数据模型名称
+    - Lottery      彩票
+    - Period       期数
+    - OpenTime     开奖时间
+    - User         网站会员
 
-The lottery2-backend is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+- 字段含义（部分）
+    - Lottery ->  name         彩票代码
+    - Period ->   period_no     期号
+
+
+## 开源协议
+
+lottery2-backend 是一个开源软件 基于 [MIT license](http://opensource.org/licenses/MIT).
