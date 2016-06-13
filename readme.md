@@ -29,7 +29,7 @@ php artisan db:seed
 
 - 字段含义（部分）
     - Lottery ->  name         彩票代码
-    - Period ->   period_no     期号
+    - Period ->   period_number     期号
 
 ## 文档
 

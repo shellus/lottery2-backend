@@ -25,17 +25,24 @@ class OpenTime extends Model
     protected $fillable = [
         'open_time'
     ];
-    protected $appends = ['period_no'];
+    protected $hidden = [
+        'id','created_at','updated_at'
+    ];
+    protected $appends = ['period_number'];
 
     /**
      * 自动生成期数字段
      * @param string $value
      * @return string
      */
-    public function getPeriodNoAttribute($value)
+    public function getPeriodNumberAttribute($value)
     {
         $id_pad0 = str_pad($this -> id, 3, '0', STR_PAD_LEFT);
 
         return $period_no = date('Ymd') . $id_pad0;
+    }
+    public function getOpenTimeAttribute($value)
+    {
+        return $period_no = date('Y-m-d ') . $value;
     }
 }
