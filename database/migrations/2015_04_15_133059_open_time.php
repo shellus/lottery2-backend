@@ -20,7 +20,7 @@ class OpenTime extends Migration {
         Schema::create('open_times', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('lottery_id', 32);
+            $table->integer('lottery_id')->unsigned();
             $table->time('open_time', 32);
             $table->timestamps();
         });
