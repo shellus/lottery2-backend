@@ -29,7 +29,6 @@ class OpenTime extends Model
     protected $hidden = [
         'id','created_at','updated_at'
     ];
-    protected $appends = ['period_number'];
 
     /**
      * 自动生成期数字段
@@ -38,7 +37,7 @@ class OpenTime extends Model
      */
     public function getPeriodNumberAttribute($value)
     {
-        $id_pad0 = str_pad($this -> id, 3, '0', STR_PAD_LEFT);
+        $id_pad0 = str_pad($value, 3, '0', STR_PAD_LEFT);
 
         return $period_no = date('Ymd') . $id_pad0;
     }
