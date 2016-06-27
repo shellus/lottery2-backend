@@ -15,8 +15,9 @@ class CreateOpenResultTable extends Migration
         Schema::create('open_results', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('lottery_id')->unsigned();
+            $table->string('period_number', 32);
             $table->timestamp('open_time');
-            $table->timestamp('open_value');
+            $table->string('open_value');
             $table->timestamps();
         });
     }
