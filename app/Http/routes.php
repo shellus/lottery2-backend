@@ -14,7 +14,7 @@ Route::get('/', 'IndexController@getIndex');
 
 
 Route::group(['prefix' => '/lottery'], function(){
-    Route::get('/next-period', 'Lottery\LotteryController@getNextPeriod');
+    Route::get('/next-period/{lottery}', 'Lottery\LotteryController@getNextPeriod');
     Route::get('/today-open-result', 'Lottery\LotteryController@getTodayOpenResult');
 
     Route::resource('/lottery', 'Lottery\LotteryController',
