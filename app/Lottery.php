@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -36,11 +37,20 @@ class Lottery extends Model
         $result = $this->hasMany('App\OpenTime');
         return $result;
     }
+    public function openResults(){
+        $result = $this->hasMany('App\OpenResult');
+        return $result;
+    }
+
+    /**
+     * @return OpenTime
+     */
     public function getNextPeriod(){
-        \DB::connection()->enableQueryLog();
         /** @var OpenTime $open_times */
         $open_times = $this -> openTimes();
-        $result = $open_times -> where('open_time','>', get_now_time()) -> first();
+        /** @var $result OpenTime $result */
+        $result = $open_times -> where('open_time','>', get_now_time()) -> firstOrFail();
+
         return $result;
     }
 }
