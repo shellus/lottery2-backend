@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Lottery;
 use Exception;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -45,6 +46,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        if ($e instanceof ModelNotFoundException){
+            if(Lottery::class === $e->getModel()){
+                return view('errors.lottery_not_found');
+            }
+
+        }
         return parent::render($request, $e);
     }
 }
